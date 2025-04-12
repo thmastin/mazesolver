@@ -5,7 +5,7 @@ class Window:
         self.width = width
         self.height = height
         self.__root = Tk()
-        self.__root.title = "Maze Solver"
+        self.__root.title("Maze Solver")
         self.__canvas = Canvas()
         self.__canvas.pack()
         self.__running = False
