@@ -13,27 +13,28 @@ class Cell:
         self._y2 = bottom_point.y
         self._win = win
 
-    def draw(self):
+    def draw(self, line_color="black", line_width=2):
         if self.has_left_wall:
             point_1 = Point(self._x1, self._y1)
             point_2 = Point(self._x1, self._y2)
             left_wall = Line(point_1, point_2)
-            left_wall.draw(self._win, "black")
+            self._win.draw_line(left_wall, line_color)
         
         if self.has_right_wall:
             point_1 = Point(self._x2, self._y1)
             point_2 = Point(self._x2, self._y2)
             right_wall = Line(point_1, point_2)
-            right_wall.draw(self._win, "black")
+            self._win.draw_line(right_wall, line_color)
 
         if self.has_top_wall:
             point_1 = Point(self._x1, self._y1)
             point_2 = Point(self._x2, self._y1)
             top_wall = Line(point_1, point_2)
-            top_wall.draw(self._win, "black")
+            self._win.draw_line(top_wall, line_color)
 
         if self.has_bottom_wall:
             point_1 = Point(self._x1, self._y2)
             point_2 = Point(self._x2, self._y2)
+            
             bottom_wall = Line(point_1, point_2)
-            bottom_wall.draw(self._win, "black")
+            self._win.draw_line(bottom_wall, line_color)
