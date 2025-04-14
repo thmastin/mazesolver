@@ -39,12 +39,12 @@ class Cell:
             self._win.draw_line(bottom_wall, line_color)
 
     def draw_move(self, to_cell, undo=False):
+        path = Line(self.cell_middle(), to_cell.cell_middle())
         if undo:
-            path = Line(self.cell_middle(), to_cell.cell_middle(), "gray")
+            self._win.draw_line(path, "gray")
         else:
-            path = Line(self.cell_middle(), to_cell.cell_middle(), "red")
-        self.win.draw.line(path)
+            self._win.draw_line(path, "red")
             
     
     def cell_middle(self):
-        return Point(self._x1 // self._x2, self._y1 // self._y2)
+        return Point((self._x1 + self._x2) / 2, (self._y1 + self._y2) / 2)
