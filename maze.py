@@ -1,3 +1,5 @@
+from cell import Cell
+
 class Maze:
     def __init__(
         self,
@@ -20,4 +22,8 @@ class Maze:
         self._create_cells()
 
     def _create_cells(self):
-        pass
+        self._cells = []
+        for i in range(self._num_cols):
+            cells_to_add = []
+            for j in range(self._num_rows):
+                cells_to_add.append(Cell())
