@@ -1,4 +1,5 @@
 from cell import Cell
+from point import Point
 
 class Maze:
     def __init__(
@@ -23,7 +24,18 @@ class Maze:
 
     def _create_cells(self):
         self._cells = []
-        for i in range(self._num_cols):
-            cells_to_add = []
-            for j in range(self._num_rows):
-                cells_to_add.append(Cell())
+        i = 0
+        while i < self._num_cols:
+            column = []
+            j = 0
+            while j < self._num_rows:
+                y1 = self._y1
+                top_point = Point(self._x1, y1)
+                y1 -= self._cell_size_y
+                bottom_point = Point(self._x1, y1)
+                column.append(Cell(top_point, bottom_point))
+                j += 1
+            self._cells.append(column)
+            self._x1 += self._cell_size_x
+            i += 1
+           
