@@ -31,14 +31,17 @@ class Maze:
             column = []
             j = 1
             while j < self._num_rows + 1:
-                column.append(Cell(Point(i, j), Point(i, j + 1), self._win))
+                cell = Cell(Point(i, j), Point(i, j + 1), self._win)
+                column.append(cell)
                 j += 1
                 col += 1
             matrix.append(column)
             i += 1
             row += 1
-        print(f"Matrix number of rows: {row}")
-        print(f"Matrix number of columns: {col}")
-            
-        
-           
+        print("Length of Matrix: ", len(matrix))
+        print("Length of Column at Index 0:", len(matrix[0])) 
+        print("First Cell Top Corner: ", matrix[0][0]._x1, ",", matrix[0][0]._y1)
+        print("First Cell Bottom Corner: ", matrix[0][0]._x2, ",", matrix[0][0]._y2)   
+        print("Last Cell Top Corner: ", matrix[-1][-1]._x1, ",", matrix[-1][-1]._y1)
+        print("Last Cell Bottom Coner: ", matrix[-1][-1]._x2, ",", matrix[-1][-1]._y2 )
+        print("")   

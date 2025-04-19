@@ -20,7 +20,10 @@ def main():
     cell_1.draw_move(cell_2)
     cell_2.draw_move(cell_3, True)
 
+    print("Maze should be 10 x 10")
     Maze(1, 1, 10, 10, 10, 10, win)
+
+    print("Maze should be 5 x 15")
     Maze(1, 1, 15, 5, 10, 10, win)
     
 
