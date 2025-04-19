@@ -23,14 +23,15 @@ class Maze:
         self._create_cells()
 
     def _create_cells(self):
-        self._cells = []
+        matrix = []
         i = 1
         while i < self._num_cols:
             column = []
             j = 1
             while j < self._num_rows:
-                column.append(Cell(i, j, self._win))
+                column.append(Cell(Point(i, j), Point(i, j + 1), self._win))
                 j += 1
-            self._cells.append(column)
+            matrix.append(column)
             i += 1
+        
            
