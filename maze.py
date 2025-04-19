@@ -25,13 +25,20 @@ class Maze:
     def _create_cells(self):
         matrix = []
         i = 1
-        while i < self._num_cols:
+        row = 0
+        while i < self._num_cols + 1:
+            col = 0
             column = []
             j = 1
-            while j < self._num_rows:
+            while j < self._num_rows + 1:
                 column.append(Cell(Point(i, j), Point(i, j + 1), self._win))
                 j += 1
+                col += 1
             matrix.append(column)
             i += 1
+            row += 1
+        print(f"Matrix number of rows: {row}")
+        print(f"Matrix number of columns: {col}")
+            
         
            
