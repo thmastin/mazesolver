@@ -24,18 +24,13 @@ class Maze:
 
     def _create_cells(self):
         self._cells = []
-        i = 0
+        i = 1
         while i < self._num_cols:
             column = []
-            j = 0
+            j = 1
             while j < self._num_rows:
-                y1 = self._y1
-                top_point = Point(self._x1, y1)
-                y1 -= self._cell_size_y
-                bottom_point = Point(self._x1, y1)
-                column.append(Cell(top_point, bottom_point))
+                column.append(Cell(i, j, self._win))
                 j += 1
             self._cells.append(column)
-            self._x1 += self._cell_size_x
             i += 1
            
