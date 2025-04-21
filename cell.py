@@ -22,24 +22,48 @@ class Cell:
             point_2 = Point(self._x1, self._y2)
             left_wall = Line(point_1, point_2)
             self._win.draw_line(left_wall, line_color)
+        else:
+            point_1 = Point(self._x1, self._y1)
+            point_2 = Point(self._x1, self._y2)
+            left_wall = Line(point_1, point_2)
+            self._win.draw_line(left_wall, "white")
+
         
         if self.has_right_wall:
             point_1 = Point(self._x2, self._y1)
             point_2 = Point(self._x2, self._y2)
             right_wall = Line(point_1, point_2)
             self._win.draw_line(right_wall, line_color)
+        else:
+            point_1 = Point(self._x2, self._y1)
+            point_2 = Point(self._x2, self._y2)
+            right_wall = Line(point_1, point_2)
+            self._win.draw_line(right_wall, "white")
+
 
         if self.has_top_wall:
             point_1 = Point(self._x1, self._y1)
             point_2 = Point(self._x2, self._y1)
             top_wall = Line(point_1, point_2)
             self._win.draw_line(top_wall, line_color)
+        else:
+            point_1 = Point(self._x1, self._y1)
+            point_2 = Point(self._x2, self._y1)
+            top_wall = Line(point_1, point_2)
+            self._win.draw_line(top_wall, "white")
+
 
         if self.has_bottom_wall:
             point_1 = Point(self._x1, self._y2)
             point_2 = Point(self._x2, self._y2)
             bottom_wall = Line(point_1, point_2)
             self._win.draw_line(bottom_wall, line_color)
+        else:
+            point_1 = Point(self._x1, self._y2)
+            point_2 = Point(self._x2, self._y2)
+            bottom_wall = Line(point_1, point_2)
+            self._win.draw_line(bottom_wall, "white")
+
 
     def draw_move(self, to_cell, undo=False):        
         path = Line(self.cell_middle(), to_cell.cell_middle())

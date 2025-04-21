@@ -24,8 +24,8 @@ def main():
     """
 
     print("Maze should be 10 x 10")
-    Maze(1, 1, 5, 10, 20, 20, win)
-    
+    m1 = Maze(1, 1, 5, 10, 20, 20, win)
+    m1._break_entrance_and_exit()
 
     win.wait_for_close()
 
