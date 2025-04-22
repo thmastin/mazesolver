@@ -103,3 +103,8 @@ class Maze:
             
             self._draw_cell(i, j)
             self._break_walls_r(new_i, new_j)
+
+    def _reset_visited_cells(self):
+        for i in range(len(self._cells)):
+            for j in range(len(self._cells[i])):
+                self._cells[i][j].visited = False

@@ -70,6 +70,29 @@ class Tests(unittest.TestCase):
             m1._cells[num_cols - 1][num_rows -1].has_bottom_wall
         )
 
+    def test_maze_visited_cells_reset(self):
+        num_cols = 3
+        num_rows = 3
+        m1 = Maze(0, 0, num_rows, num_cols, 10, 10)
+        
+        m1._cells[0][0].visited = True
+        m1._cells[0][1].visited = True
+        m1._cells[0][2].visited = True
+        m1._cells[1][0].visited = True
+        m1._cells[1][1].visited = True
+        m1._cells[1][2].visited = True
+        m1._cells[2][0].visited = True
+        m1._cells[2][2].visited = True
+        m1._cells[2][2].visited = True
+        
+        m1._reset_visited_cells()
+
+        for i in range(len(m1._cells)):
+            for j in range(len(m1._cells[i])):
+                self.assertFalse(m1._cells[i][j].visited,
+                    f"Cell at ({i},{j}) should have visited=False")
+
+
 
 
     
