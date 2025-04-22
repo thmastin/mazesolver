@@ -66,7 +66,8 @@ class Cell:
             self._win.draw_line(bottom_wall, "white")
 
 
-    def draw_move(self, to_cell, undo=False):        
+    def draw_move(self, to_cell, undo=False):
+        print(f"Drawing move from ({self._x1}, {self._y1}) to ({to_cell._x1}, {to_cell._y1}), undo={undo}")        
         path = Line(self.cell_middle(), to_cell.cell_middle())
         if undo:
             self._win.draw_line(path, "gray")

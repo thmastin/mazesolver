@@ -20,11 +20,12 @@ def main():
 
     cell_1.draw_move(cell_2)
     cell_2.draw_move(cell_3, True)
-
     """
+    
 
     print("Maze should be 10 x 10")
-    m1 = Maze(1, 1, 5, 10, 20, 20, win)
+    m1 = Maze(1, 1, 10, 10, 20, 20, win)
+    m1.solve()
 
     win.wait_for_close()
 
