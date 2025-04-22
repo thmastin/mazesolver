@@ -12,6 +12,7 @@ class Cell:
         self._y1 = top_point.y
         self._y2 = bottom_point.y
         self._win = win
+        self.visited = False
 
     def draw(self, line_color="black", line_width=2):
         if self._win is None:
