@@ -25,8 +25,6 @@ def main():
 
     print("Maze should be 10 x 10")
     m1 = Maze(1, 1, 5, 10, 20, 20, win)
-    m1._break_entrance_and_exit()
-    m1._break_walls_r(0, 0)
 
     win.wait_for_close()
 
